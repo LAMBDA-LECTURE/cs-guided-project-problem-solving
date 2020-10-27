@@ -13,8 +13,25 @@ Examples:
 Notes:
 - The input list will only contain integers.
 """
+from typing import List
 
-
-def add_indexes(numbers):
+def add_indexes(numbers: List[int]) -> List[int]:
     # Your code here
+    # given a list of numbers
+    # add index of element  plus element, return a list of ints
+    output = []
+    #iterate through list & access indices
+    # for i in range(len(numbers)):
+        # get the ith number for this iteration
+        # n = numbers[i]
+    for i, n in enumerate(numbers): # cleaner step
+        #add current number w it's index
+        sum = n + i
+        # push that sum to a new list
+        output.append(sum)
+    return output
 
+
+print(add_indexes([0, 0, 0, 0, 0])) # ➞ [0, 1, 2, 3, 4]
+print(add_indexes([1, 2, 3, 4, 5])) # ➞ [1, 3, 5, 7, 9]
+print(add_indexes([5, 4, 3, 2, 1])) # ➞ [5, 5, 5, 5, 5]
